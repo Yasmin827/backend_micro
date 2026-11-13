@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechManager | Tecnologias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section id="loginSection" class="login-card">
+            <div class="brand-mark">T</div>
+            <p class="eyebrow">PAINEL ADMINISTRATIVO</p>
+            <h1>TechManager</h1>
+            <p class="muted">Entre para gerenciar as tecnologias cadastradas.</p>
+            <form id="loginForm" class="form-stack">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="admin@tecnologias.com" required>
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" placeholder="Digite sua senha" required>
+                <button class="primary-button" type="submit">Entrar</button>
+                <p id="loginMessage" class="feedback" role="status"></p>
+            </form>
+        </section>
+
+        <section id="appSection" class="app-section hidden">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">PAINEL ADMINISTRATIVO</p>
+                    <h1>Cadastro de tecnologias</h1>
+                    <p class="muted">Organize e acompanhe as tecnologias de programação.</p>
+                </div>
+                <button id="logoutButton" class="secondary-button" type="button">Sair</button>
+            </header>
+
+            <section class="content-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">GERENCIAMENTO</p>
+                        <h2 id="formTitle">Nova tecnologia</h2>
+                    </div>
+                </div>
+                <form id="technologyForm" class="technology-form">
+                    <input id="technologyId" type="hidden">
+                    <div class="field">
+                        <label for="nome">Nome da tecnologia</label>
+                        <input id="nome" type="text" maxlength="80" placeholder="Ex.: React" required>
+                    </div>
+                    <div class="field">
+                        <label for="base">Base</label>
+                        <select id="base" required>
+                            <option value="">Selecione</option>
+                            <option value="PHP">PHP</option>
+                            <option value="C#">C#</option>
+                            <option value="JS">JS</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="curvaAprendizado">Curva de aprendizado</label>
+                        <input id="curvaAprendizado" type="text" maxlength="60" placeholder="Ex.: 6 meses" required>
+                    </div>
+                    <div class="form-actions">
+                        <button id="saveButton" class="primary-button" type="submit">Cadastrar tecnologia</button>
+                        <button id="cancelButton" class="secondary-button hidden" type="button">Cancelar</button>
+                    </div>
+                </form>
+                <p id="formMessage" class="feedback" role="status"></p>
+            </section>
+
+            <section class="content-card">
+                <div class="table-heading">
+                    <div>
+                        <p class="eyebrow">BASE DE DADOS</p>
+                        <h2>Tecnologias cadastradas</h2>
+                    </div>
+                    <span id="totalCount" class="count-pill">0 registros</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Base</th>
+                                <th>Curva de aprendizado</th>
+                                <th class="actions-column">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="technologyTable">
+                            <tr><td colspan="4" class="empty-state">Carregando tecnologias...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <footer>TechManager · API de Cadastro de Tecnologias</footer>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
