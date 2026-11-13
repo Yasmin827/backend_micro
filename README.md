@@ -1,6 +1,7 @@
+
 # API de Cadastro de Tecnologias
 
-Projeto de API REST com Node.js, Express, MongoDB Atlas, Mongoose e autenticacao JWT. O frontend utiliza HTML, CSS e JavaScript puro.
+Projeto de API REST com Node.js, Express, MongoDB Atlas, Mongoose e autenticação JWT. O frontend utiliza HTML, CSS e JavaScript puro.
 
 ## 1. Requisitos
 
@@ -8,7 +9,7 @@ Projeto de API REST com Node.js, Express, MongoDB Atlas, Mongoose e autenticacao
 - Conta e cluster no MongoDB Atlas.
 - VS Code (recomendado).
 
-## 2. Instalacao
+## 2. Instalação
 
 No terminal, dentro da pasta do projeto:
 
@@ -16,7 +17,7 @@ No terminal, dentro da pasta do projeto:
 npm install
 ```
 
-Crie uma copia do arquivo `.env.example` com o nome `.env` e preencha as variaveis:
+Crie uma cópia do arquivo `.env.example` com o nome `.env` e preencha as variáveis:
 
 ```env
 PORT=3003
@@ -27,7 +28,7 @@ ADMIN_PASSWORD=uma_senha_forte
 JWT_EXPIRES_IN=2h
 ```
 
-Nao envie o arquivo `.env` para o GitHub. Ele ja esta protegido pelo `.gitignore`.
+Não envie o arquivo `.env` para o GitHub. Ele já está protegido pelo `.gitignore`.
 
 ## 3. Executar
 
@@ -47,7 +48,7 @@ Acesse: http://localhost:3003
 
 Use o email e a senha definidos em `ADMIN_EMAIL` e `ADMIN_PASSWORD` no `.env`.
 
-A API retorna um token JWT. O frontend armazena o token em `sessionStorage` e envia o cabecalho:
+A API retorna um token JWT. O frontend armazena o token em `sessionStorage` e envia o cabeçalho:
 
 ```http
 Authorization: Bearer SEU_TOKEN
@@ -55,9 +56,9 @@ Authorization: Bearer SEU_TOKEN
 
 ## 5. Rotas
 
-| Metodo | Rota | Descricao | Token |
+| Método | Rota | Descrição | Token |
 |---|---|---|---|
-| POST | `/api/auth/login` | Realizar login e receber token | Nao |
+| POST | `/api/auth/login` | Realizar login e receber token | Não |
 | GET | `/api/tecnologias` | Listar tecnologias | Sim |
 | GET | `/api/tecnologias/:id` | Consultar por ID | Sim |
 | POST | `/api/tecnologias` | Cadastrar tecnologia | Sim |
@@ -78,9 +79,9 @@ Envie um JSON para `POST /api/tecnologias`:
 
 Valores permitidos para `base`: `PHP`, `C#` e `JS`.
 
-## 7. Observacoes
+## 7. Observações
 
-- Todas as rotas de tecnologias exigem token JWT valido.
-- O token tem duracao configuravel em `JWT_EXPIRES_IN`.
-- O campo `curvaAprendizado` e texto para aceitar formatos como `6 meses`, `1 ano` ou `3 a 4 meses`.
-- Para um ambiente real, utilize HTTPS, senha forte, segredo JWT robusto, limitacao de tentativas de login e gerenciamento seguro de usuarios.
+- Todas as rotas de tecnologias exigem token JWT válido.
+- O token tem duração configurável em `JWT_EXPIRES_IN`.
+- O campo `curvaAprendizado` é texto para aceitar formatos como `6 meses`, `1 ano` ou `3 a 4 meses`.
+- Para um ambiente real, utilize HTTPS, senha forte, segredo JWT robusto, limitação de tentativas de login e gerenciamento seguro de usuários.
